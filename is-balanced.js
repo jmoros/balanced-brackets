@@ -4,12 +4,14 @@ const bracketsMap = {
   '[': ']'
 };
 
+const closingBrackets = Object.values(bracketsMap);
+
 const isOpeningBracket = (bracket) => {
-  return Object.keys(bracketsMap).includes(bracket);
+  return Boolean(bracketsMap[bracket]);
 };
 
 const isClosingBracket = (bracket) => {
-  return Object.values(bracketsMap).includes(bracket);
+  return closingBrackets.includes(bracket);
 };
 
 module.exports = (str) => {
